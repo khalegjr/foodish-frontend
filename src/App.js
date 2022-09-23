@@ -2,6 +2,28 @@ import logo from "./assets/img/Logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Navbar, Row, Col, Card, Button } from "react-bootstrap";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 function App() {
   return (
@@ -93,11 +115,81 @@ function App() {
           </Row>
         </Container>
       </main>
+
       <section class="sessao2">
         <Container fluid>
           <Row>
-            <Col className="mx-6" bg="dark">
-              SESSÃO 2
+            <Col className="mx-6 py-5" bg="dark">
+              <Carousel responsive={responsive}>
+                <Container>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Card Title</Card.Title>
+                      <Card.Text>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </Card.Text>
+                      <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                  </Card>
+                </Container>
+
+                <Container>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Card Title</Card.Title>
+                      <Card.Text>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </Card.Text>
+                      <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                  </Card>
+                </Container>
+
+                <Container>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Card Title</Card.Title>
+                      <Card.Text>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </Card.Text>
+                      <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                  </Card>
+                </Container>
+                <Container>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Card Title</Card.Title>
+                      <Card.Text>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </Card.Text>
+                      <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                  </Card>
+                </Container>
+
+                <Container>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Card Title</Card.Title>
+                      <Card.Text>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </Card.Text>
+                      <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                  </Card>
+                </Container>
+              </Carousel>
             </Col>
           </Row>
         </Container>
