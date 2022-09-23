@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  color: white;
 }
 
 .App-logo {
@@ -28,14 +29,22 @@
   color: #61dafb;
 }
 
-.sessa1 {
+.sessao1 {
   top: 120px;
   left: 0px;
   width: 1920px;
   height: 720px;
   /* UI Properties */
   background: transparent url('./assets/img/Background.png') 0% 0% no-repeat padding-box;
-  color: white;
+}
+
+.sessao2 {
+  top: 840px;
+  left: 0px;
+  width: 1920px;
+  height: 700px;
+  background: transparent url('./assets/img/Background2.png') 0% 0% no-repeat padding-box;
+  opacity: 1;
 }
 
 @keyframes App-logo-spin {

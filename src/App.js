@@ -93,6 +93,15 @@ function App() {
           </Row>
         </Container>
       </main>
+      <section class="sessao2">
+        <Container fluid>
+          <Row>
+            <Col className="mx-6" bg="dark">
+              SESSÃO 2
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </div>
   );
 }
