@@ -1,9 +1,18 @@
 import logo from "./assets/img/Logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Navbar, Row, Col, Card, Button } from "react-bootstrap";
+import {
+  Container,
+  Navbar,
+  Row,
+  Col,
+  Card,
+  Button,
+  Image,
+} from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import image1 from "./assets/img/5c2e894fed6dddaf5b0998129bafd941.png";
 
 const responsive = {
   superLargeDesktop: {
@@ -477,6 +486,71 @@ function App() {
                   </Card>
                 </Container>
               </Carousel>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section class="sessao3">
+        <Container>
+          <Row>
+            <Col sm={8}>
+              <Container>
+                <h2
+                  style={{
+                    /* UI Properties */
+                    textAlign: "left",
+                    font: "normal normal bold 48px/96px Poppins",
+                    letterSpacing: "0px",
+                    color: "#FFFFFF",
+                    opacity: "1",
+                  }}
+                >
+                  Lorem ipsum sit
+                </h2>
+
+                <p
+                  style={{
+                    textAlign: "left",
+                    font: "normal normal normal 22px/33px Poppins",
+                    letterSpacing: "0px",
+                    color: "#FFFFFF",
+                    opacity: "1",
+                  }}
+                >
+                  Amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p
+                  style={{
+                    textAlign: "left",
+                    font: "normal normal normal 22px/33px Poppins",
+                    letterSpacing: "0px",
+                    color: "#FFFFFF",
+                    opacity: "1",
+                  }}
+                >
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur.
+                </p>
+              </Container>
+            </Col>
+            <Col sm={4}>
+              <Card className="bg-dark text-white">
+                <Card.Img
+                  src={image1}
+                  alt="Card image"
+                  style={{
+                    width: "650px",
+                    height: "384px",
+                    /* UI Properties */
+                    opacity: "1",
+                  }}
+                />
+                <Card.ImgOverlay></Card.ImgOverlay>
+              </Card>
             </Col>
           </Row>
         </Container>

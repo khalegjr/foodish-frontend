@@ -30,8 +30,6 @@
 }
 
 .sessao1 {
-  top: 120px;
-  left: 0px;
   width: 1920px;
   height: 720px;
   /* UI Properties */
@@ -39,11 +37,16 @@
 }
 
 .sessao2 {
-  top: 840px;
-  left: 0px;
   width: 1920px;
   height: 700px;
   background: transparent url('./assets/img/Background2.png') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.sessao3 {
+  width: 1920px;
+  height: 560px;
+  background: #000000 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
