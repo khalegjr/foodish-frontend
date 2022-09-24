@@ -50,6 +50,13 @@
   opacity: 1;
 }
 
+.sessao4 {
+  width: 1920px;
+  height: 720px;
+  background: transparent url('./assets/img/Background3.png') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
