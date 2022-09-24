@@ -15,6 +15,8 @@ import {
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import image1 from "./assets/img/5c2e894fed6dddaf5b0998129bafd941.png";
+import facebook from "./assets/img/facebook.svg";
+import instagram from "./assets/img/instagram.svg";
 import { useState } from "react";
 
 function App() {
@@ -506,7 +508,7 @@ function App() {
       </section>
 
       <section class="sessao3">
-        <Container>
+        <Container fluid>
           <Row>
             <Col sm={8}>
               <Container>
@@ -571,7 +573,7 @@ function App() {
       </section>
 
       <section class="sessao4">
-        <Container>
+        <Container fluid>
           <Row>
             <Col sm={4}>
               <Container>
@@ -770,6 +772,40 @@ function App() {
           </Row>
         </Container>
       </section>
+
+      <footer bg="dark" class="footer">
+        <Container fluid className="align-items-center" md={12}>
+          <Row>
+            <Col className="mx-6">
+              <Row>
+                <h4
+                  style={{
+                    /* UI Properties */
+                    textAlign: "left",
+                    font: "normal normal 300 22px/96px Poppins",
+                    letterSpacing: "0px",
+                    color: "#FFFFFF",
+                  }}
+                >
+                  foodish 2021
+                </h4>
+              </Row>
+
+              <Row>
+                <Col>
+                  <img
+                    src={facebook}
+                    alt="página no facebook"
+                    className="mx-5"
+                  />
+
+                  <img src={instagram} alt="página no instagram" />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
     </div>
   );
 }
