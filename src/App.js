@@ -1,23 +1,11 @@
-import logo from "./assets/img/Logo.svg";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Container,
-  Navbar,
-  Row,
-  Col,
-  Card,
-  Button,
-  Image,
-  Form,
-  InputGroup,
-} from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import image1 from "./assets/img/5c2e894fed6dddaf5b0998129bafd941.png";
 import facebook from "./assets/img/facebook.svg";
 import instagram from "./assets/img/instagram.svg";
 import { useState } from "react";
+import Header from "./components/header/Header";
 
 function App() {
   const responsive = {
@@ -53,16 +41,9 @@ function App() {
   };
   return (
     <div className="App">
-      <header class="my-3">
-        <Navbar expand="lg">
-          <Container>
-            <Navbar.Brand>
-              <img src={logo} className="mx-6" alt="logo" />
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </header>
+      <Header />
       {/* TODO: verificar alinhamento e as fontes */}
+
       <main class="sessao1">
         <Container fluid>
           <Row>
