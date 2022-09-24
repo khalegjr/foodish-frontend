@@ -117,75 +117,362 @@ function App() {
       </main>
 
       <section class="sessao2">
-        <Container fluid>
+        <Container fluid className="text-black">
           <Row>
             <Col className="mx-6 py-5" bg="dark">
-              <Carousel responsive={responsive}>
-                <Container>
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+              <Carousel
+                responsive={responsive}
+                sliderClass=""
+                slidesToSlide={1}
+                swipeable
+                infinite
+              >
+                <Container className="align-items-center">
+                  <Card
+                    style={{
+                      width: "428px",
+                      height: "417px",
+                      alignItems: "center",
+                      /* UI Properties */
+                      background: "#FFFFFF 0% 0% no-repeat padding-box",
+                      opacity: "1",
+                    }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src="https://picsum.photos/id/200/180/180"
+                      style={{
+                        /* Layout Properties */
+                        width: "180px",
+                        height: "180px",
+                        /* UI Properties */
+                        boxShadow: "0px 3px 24px #00000029",
+                        opacity: "1",
+                        borderRadius: 100,
+                      }}
+                    />
                     <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                      <Card.Title
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal bold 48px/96px Poppins",
+                          letterSpacing: "0px",
+                          color: "#121212",
+                          opacity: "1",
+                        }}
+                      >
+                        Receita 01
+                      </Card.Title>
+                      <Card.Text
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal normal 22px/29px Roboto",
+                          letterSpacing: "0px",
+                          color: "#222222",
+                          opacity: "1",
+                        }}
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
                       </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                      <Button
+                        variant="primary"
+                        style={{
+                          /* UI Properties */
+                          background: "#5B6ED6 0% 0% no-repeat padding-box",
+                          borderRadius: "4px",
+                          opacity: "1",
+                          textAlign: "center",
+                          font: "normal normal normal 20px/30px Poppins",
+                          letterSpacing: "0px",
+                          color: "#FFFFFF",
+                          margin: "0 auto",
+                        }}
+                      >
+                        Learn more
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Container>
 
-                <Container>
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                <Container className="align-items-center">
+                  <Card
+                    style={{
+                      width: "428px",
+                      height: "417px",
+                      alignItems: "center",
+                      /* UI Properties */
+                      background: "#FFFFFF 0% 0% no-repeat padding-box",
+                      opacity: "1",
+                    }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src="https://picsum.photos/id/201/180/180"
+                      style={{
+                        /* Layout Properties */
+                        width: "180px",
+                        height: "180px",
+                        /* UI Properties */
+                        boxShadow: "0px 3px 24px #00000029",
+                        opacity: "1",
+                        borderRadius: 100,
+                      }}
+                    />
                     <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                      <Card.Title
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal bold 48px/96px Poppins",
+                          letterSpacing: "0px",
+                          color: "#121212",
+                          opacity: "1",
+                        }}
+                      >
+                        Receita 02
+                      </Card.Title>
+                      <Card.Text
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal normal 22px/29px Roboto",
+                          letterSpacing: "0px",
+                          color: "#222222",
+                          opacity: "1",
+                        }}
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
                       </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                      <Button
+                        variant="primary"
+                        style={{
+                          /* UI Properties */
+                          background: "#5B6ED6 0% 0% no-repeat padding-box",
+                          borderRadius: "4px",
+                          opacity: "1",
+                          textAlign: "center",
+                          font: "normal normal normal 20px/30px Poppins",
+                          letterSpacing: "0px",
+                          color: "#FFFFFF",
+                          margin: "0 auto",
+                        }}
+                      >
+                        Learn more
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Container>
 
-                <Container>
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                <Container className="align-items-center">
+                  <Card
+                    style={{
+                      width: "428px",
+                      height: "417px",
+                      alignItems: "center",
+                      /* UI Properties */
+                      background: "#FFFFFF 0% 0% no-repeat padding-box",
+                      opacity: "1",
+                    }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src="https://picsum.photos/id/202/180/180"
+                      style={{
+                        /* Layout Properties */
+                        width: "180px",
+                        height: "180px",
+                        /* UI Properties */
+                        boxShadow: "0px 3px 24px #00000029",
+                        opacity: "1",
+                        borderRadius: 100,
+                      }}
+                    />
                     <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                      <Card.Title
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal bold 48px/96px Poppins",
+                          letterSpacing: "0px",
+                          color: "#121212",
+                          opacity: "1",
+                        }}
+                      >
+                        Receita 03
+                      </Card.Title>
+                      <Card.Text
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal normal 22px/29px Roboto",
+                          letterSpacing: "0px",
+                          color: "#222222",
+                          opacity: "1",
+                        }}
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
                       </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Container>
-                <Container>
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                      <Button
+                        variant="primary"
+                        style={{
+                          /* UI Properties */
+                          background: "#5B6ED6 0% 0% no-repeat padding-box",
+                          borderRadius: "4px",
+                          opacity: "1",
+                          textAlign: "center",
+                          font: "normal normal normal 20px/30px Poppins",
+                          letterSpacing: "0px",
+                          color: "#FFFFFF",
+                          margin: "0 auto",
+                        }}
+                      >
+                        Learn more
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Container>
 
-                <Container>
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                <Container className="align-items-center">
+                  <Card
+                    style={{
+                      width: "428px",
+                      height: "417px",
+                      alignItems: "center",
+                      /* UI Properties */
+                      background: "#FFFFFF 0% 0% no-repeat padding-box",
+                      opacity: "1",
+                    }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src="https://picsum.photos/id/203/180/180"
+                      style={{
+                        /* Layout Properties */
+                        width: "180px",
+                        height: "180px",
+                        /* UI Properties */
+                        boxShadow: "0px 3px 24px #00000029",
+                        opacity: "1",
+                        borderRadius: 100,
+                      }}
+                    />
                     <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                      <Card.Title
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal bold 48px/96px Poppins",
+                          letterSpacing: "0px",
+                          color: "#121212",
+                          opacity: "1",
+                        }}
+                      >
+                        Receita 04
+                      </Card.Title>
+                      <Card.Text
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal normal 22px/29px Roboto",
+                          letterSpacing: "0px",
+                          color: "#222222",
+                          opacity: "1",
+                        }}
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
                       </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                      <Button
+                        variant="primary"
+                        style={{
+                          /* UI Properties */
+                          background: "#5B6ED6 0% 0% no-repeat padding-box",
+                          borderRadius: "4px",
+                          opacity: "1",
+                          textAlign: "center",
+                          font: "normal normal normal 20px/30px Poppins",
+                          letterSpacing: "0px",
+                          color: "#FFFFFF",
+                          margin: "0 auto",
+                        }}
+                      >
+                        Learn more
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Container>
+
+                <Container className="align-items-center">
+                  <Card
+                    style={{
+                      width: "428px",
+                      height: "417px",
+                      alignItems: "center",
+                      /* UI Properties */
+                      background: "#FFFFFF 0% 0% no-repeat padding-box",
+                      opacity: "1",
+                    }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src="https://picsum.photos/id/204/180/180"
+                      style={{
+                        /* Layout Properties */
+                        width: "180px",
+                        height: "180px",
+                        /* UI Properties */
+                        boxShadow: "0px 3px 24px #00000029",
+                        opacity: "1",
+                        borderRadius: 100,
+                      }}
+                    />
+                    <Card.Body>
+                      <Card.Title
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal bold 48px/96px Poppins",
+                          letterSpacing: "0px",
+                          color: "#121212",
+                          opacity: "1",
+                        }}
+                      >
+                        Receita 05
+                      </Card.Title>
+                      <Card.Text
+                        style={{
+                          /* UI Properties */
+                          textAlign: "center",
+                          font: "normal normal normal 22px/29px Roboto",
+                          letterSpacing: "0px",
+                          color: "#222222",
+                          opacity: "1",
+                        }}
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                      </Card.Text>
+                      <Button
+                        variant="primary"
+                        style={{
+                          /* UI Properties */
+                          background: "#5B6ED6 0% 0% no-repeat padding-box",
+                          borderRadius: "4px",
+                          opacity: "1",
+                          textAlign: "center",
+                          font: "normal normal normal 20px/30px Poppins",
+                          letterSpacing: "0px",
+                          color: "#FFFFFF",
+                          margin: "0 auto",
+                        }}
+                      >
+                        Learn more
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Container>
