@@ -5,7 +5,7 @@ import image1 from "./assets/img/5c2e894fed6dddaf5b0998129bafd941.png";
 import facebook from "./assets/img/facebook.svg";
 import instagram from "./assets/img/instagram.svg";
 import { useState } from "react";
-import Header from "./components/header/Header";
+import Header from "./components/Header";
 
 function App() {
   const responsive = {
