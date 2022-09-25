@@ -1,0 +1,24 @@
+.custom-right-arrow {
+  transform: rotate(180deg);
+  background: transparent;
+  border-style: none;
+}
+
+.custom-right-arrow:hover {
+  opacity: .8;
+}
+
+.custom-left-arrow {
+  background: transparent;
+  border-style: none;
+  right: -100px;
+}
+
+
+.custom-button-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  /* right: -100px; */
+}
