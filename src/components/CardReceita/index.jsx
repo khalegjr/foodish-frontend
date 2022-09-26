@@ -58,7 +58,6 @@ const CardReceita = () => {
             variant="primary"
             style={{
               /* UI Properties */
-              background: "#5B6ED6 0% 0% no-repeat padding-box",
               borderRadius: "4px",
               opacity: "1",
               textAlign: "center",
