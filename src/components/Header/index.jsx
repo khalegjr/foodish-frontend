@@ -5,7 +5,7 @@ import logo from "../../assets/img/Logo.svg";
 const Header = () => {
   return (
     <>
-      <header className="my-3">
+      <header className="my-3" sd={12}>
         <Navbar expand="lg">
           <Container>
             <Navbar.Brand>
