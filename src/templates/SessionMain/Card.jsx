@@ -1,58 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const CardSession = () => {
   return (
     <>
-      <Container>
-        <Row
-          style={{
-            /* Layout Properties */
-
-            // height: "231px",
-            /* UI Properties */
-            textAlign: "left",
-          }}
-        >
-          <h1
-            style={{
-              marginTop: "117px",
-              maxWidth: "689px",
-              font: "normal normal bold 96px/96px Poppins",
-              letterSpacing: "0px",
-              color: "#FFFFFF",
-              opacity: "1",
-              paddingTop: "24px",
-            }}
-          >
-            Teste o estilo de vida
-          </h1>
+      <Container className="mt-md-1">
+        <Row className="mt-md-5 pt-md-5">
+          <Col sd={12} md={7}>
+            <h1
+              className="text-white"
+              // style={{
+              //   maxWidth: "689px",
+              // }}
+            >
+              Teste o estilo de vida
+            </h1>
+          </Col>
         </Row>
 
-        <Row
-          style={{
-            width: "539px",
-            textAlign: "left",
-            font: "normal normal 300 32px/48px Poppins",
-            letterSpacing: "0px",
-            color: "#FFFFFF",
-            opacity: "1",
-            marginTop: "53px",
-          }}
-        >
-          <h3>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt
-          </h3>
+        <Row className="text-white py-2" sd={12} md={7}>
+          <Col sd={12} md={6}>
+            <h3>
+              H3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            </h3>
+          </Col>
         </Row>
 
-        <Row className="mt-5">
-          <Container>
-            <Button variant="primary" size="lg">
+        {/* TODO: Fix o background */}
+        <Row className="py-5 ">
+          <Container className="px-0 pb-md-5 pt-md-3 mt-md-1 m-sm-0 p-sm-2">
+            <Button size="lg" variant="primary" className="mb-5">
               Vamos lá!
             </Button>
-            {" Olá"}
           </Container>
         </Row>
       </Container>

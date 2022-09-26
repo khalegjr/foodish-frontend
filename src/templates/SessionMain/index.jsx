@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CardSession from "./Card";
+
+import "./style.scss";
 
 const SessionMain = () => {
   return (
     <>
-      <main class="sessao1">
+      <Container as="main" className="sessao1" fluid>
         <CardSession />
-      </main>
+      </Container>
     </>
   );
 };
