@@ -4,13 +4,13 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import FormRegister from "../../components/FormRegister";
 import "./styles.scss";
 
-const SessionThree = () => {
+const FormSection = ({ uf }) => {
   return (
     <>
       <Container as="section" className="session-form w-100" fluid>
         <Container sd={12} lg={4} className="">
           <Row>
-            <FormRegister />
+            <FormRegister uf={uf} />
           </Row>
         </Container>
       </Container>
@@ -18,6 +18,6 @@ const SessionThree = () => {
   );
 };
 
-SessionThree.propTypes = {};
+FormSection.propTypes = {};
 
-export default SessionThree;
+export default FormSection;
