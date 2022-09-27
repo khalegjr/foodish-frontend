@@ -101,7 +101,9 @@ const FormRegister = ({ uf }) => {
               >
                 <option>UF</option>
                 {uf.map((option) => (
-                  <option value={option.sigla}>{option.nome}</option>
+                  <option key={option.id} value={option.sigla}>
+                    {option.nome}
+                  </option>
                 ))}
               </Form.Select>
               <Form.Control.Feedback type="invalid">
