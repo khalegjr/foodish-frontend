@@ -38,11 +38,7 @@ const CarouselSession = () => {
       <Container>
         <Carousel
           responsive={responsive}
-          arrows={false}
-          customRightArrow={<CustomRightArrow />}
-          customLeftArrow={<CustomLeftArrow />}
-          renderButtonGroupOutside={true}
-          customButtonGroup={<CustomButtonGroup />}
+          arrows={true}
           sliderClass=""
           slidesToSlide={1}
           swipeable
