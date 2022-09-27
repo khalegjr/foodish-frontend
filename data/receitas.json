@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Receita 1",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "img": ""
+    },
+    {
+      "id": 2,
+      "title": "Receita 2",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "img": ""
+    },
+    {
+      "id": 3,
+      "title": "Receita 3",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "img": ""
+    },
+    {
+      "id": 4,
+      "title": "Receita 4",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "img": ""
+    },
+    {
+      "id": 5,
+      "title": "Receita 5",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "img": ""
+    }
+  ]
+}
