@@ -33,6 +33,8 @@ export const ButtonClear = (props) => {
           border: "1px solid #FFFFFF",
           borderRadius: "4px",
         }}
+        value={props.children}
+        type={props.type}
       >
         {props.children}
       </Button>

@@ -1,36 +1,75 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { ButtonClear, ButtonSend } from "../ButtonsVariants";
 import axios from "axios";
 
 const FormRegister = ({ uf }) => {
+  const [dataForm, setDataForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+    state: "",
+  });
+
+  const [status, setStatus] = useState({
+    success: false,
+    message: "",
+    data: {},
+  });
+
+  // Setar os dados do form
   const [validated, setValidated] = useState(false);
   const [data, setData] = useState([]);
 
-  const handleSubmit = (event) => {
+  // Receber os dados do form
+  const valueInput = (e) =>
+    setDataForm({ ...dataForm, [e.target.name]: e.target.value });
+
+  // Enviar os dados par o back-end
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
+
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-
+      console.log("Deu ruim antes de ir");
+    } else {
+      event.preventDefault();
+      console.log("eita");
       axios
-        .post(process.env.REACT_APP_BACKAPI)
-        .then((response) => setData(response.data));
+        .post(process.env.REACT_APP_BACKAPI, dataForm)
+        .then((response, dataForm) => {
+          console.log(response.data);
+          setStatus(response.data);
+          setData(response.data);
+        })
+        .catch(function (error) {
+          console.log("ERRO:", error);
+        });
+
+      console.log("Meu Status: ", status);
+      console.log("Meu Data: ", data);
     }
 
     setValidated(true);
   };
 
+  const clearForm = () => {
+    setDataForm({
+      name: "",
+      email: "",
+      phone: "",
+      city: "",
+      state: "",
+    });
+  };
+
   return (
     <>
       <Container className="bg-secondary pt-2 pt-lg-4">
-        <Form
-          noValidate
-          validated={validated}
-          onSubmit={handleSubmit}
-          // className="w-100"
-        >
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="my-2 my-lg-3 pb-4 text-white text-center">
             <h2>Cadastro</h2>
           </Row>
@@ -42,6 +81,7 @@ const FormRegister = ({ uf }) => {
                 type="text"
                 placeholder="Nome"
                 size="lg"
+                onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
                 Erro no nome
@@ -57,9 +97,10 @@ const FormRegister = ({ uf }) => {
                 type="email"
                 placeholder="Email"
                 size="lg"
+                onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
-                Email erro
+                {status.message || "Erro no email"}
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
@@ -71,6 +112,7 @@ const FormRegister = ({ uf }) => {
                 type="tel"
                 placeholder="Telefone"
                 size="lg"
+                onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
                 Erro telefone
@@ -85,6 +127,7 @@ const FormRegister = ({ uf }) => {
                 type="text"
                 placeholder="Cidade"
                 size="lg"
+                onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid city.
@@ -98,6 +141,7 @@ const FormRegister = ({ uf }) => {
                 type="text"
                 placeholder="Estado"
                 size="lg"
+                onChange={valueInput}
               >
                 <option>UF</option>
                 {uf.map((option) => (
@@ -118,13 +162,18 @@ const FormRegister = ({ uf }) => {
            */}
           <Row className="mb-4 gap-4 flex-grow-0 justify-content-between">
             <Col className="align-align-items-center">
-              <ButtonClear type="button" size="xl" className="my-5">
+              <Button
+                type="button"
+                size="xl"
+                className="my-5"
+                onClick={clearForm}
+              >
                 Limpar
-              </ButtonClear>
+              </Button>
 
-              <ButtonSend lg={6} variant="primary" type="submit">
+              <Button lg={6} variant="primary" type="submit">
                 Enviar
-              </ButtonSend>
+              </Button>
             </Col>
           </Row>
         </Form>
