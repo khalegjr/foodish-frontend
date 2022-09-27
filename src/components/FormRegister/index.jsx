@@ -1,80 +1,125 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { ButtonClear, ButtonSend } from "../ButtonsVariants";
 import axios from "axios";
 
 const FormRegister = ({ uf }) => {
-  const [dataForm, setDataForm] = useState({
+  const initialStateForm = {
     name: "",
     email: "",
     phone: "",
     city: "",
     state: "",
-  });
+  };
 
-  const [status, setStatus] = useState({
+  const initialStateValidated = false;
+
+  const initialStateStatus = {
     success: false,
     message: "",
     data: {},
-  });
+  };
 
-  // Setar os dados do form
-  const [validated, setValidated] = useState(false);
-  const [data, setData] = useState([]);
+  // Dados do formulário
+  const [dataForm, setDataForm] = useState(initialStateForm);
+
+  // Controle da request
+  const [controle, setControle] = useState(initialStateStatus);
+
+  // Form já foi validado ou não
+  const [validated, setValidated] = useState(initialStateValidated);
+
+  // Status da request com mensagens de retorno
+  const [status, setStatus] = useState(initialStateStatus);
 
   // Receber os dados do form
   const valueInput = (e) =>
     setDataForm({ ...dataForm, [e.target.name]: e.target.value });
 
-  // Enviar os dados par o back-end
+  // Recebe o retorno da request
+  let dados;
+
+  // Enviar os dados para o backend
   const handleSubmit = async (event) => {
     const form = event.currentTarget;
 
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-      console.log("Deu ruim antes de ir");
     } else {
       event.preventDefault();
-      console.log("eita");
-      axios
+
+      await axios
         .post(process.env.REACT_APP_BACKAPI, dataForm)
-        .then((response, dataForm) => {
-          console.log(response.data);
-          setStatus(response.data);
-          setData(response.data);
+        .then((response) => {
+          setControle(response.data);
         })
         .catch(function (error) {
-          console.log("ERRO:", error);
+          console.error(error);
         });
-
-      console.log("Meu Status: ", status);
-      console.log("Meu Data: ", data);
     }
-
     setValidated(true);
   };
 
-  const clearForm = () => {
-    setDataForm({
-      name: "",
-      email: "",
-      phone: "",
-      city: "",
-      state: "",
-    });
+  console.log("Meus status fora da handle: ", status.data.email);
+  console.log("controle antes: ", controle.message);
+  const [show, setShow] = useState("none");
+
+  useEffect(() => {
+    setStatus(controle);
+    if (!controle.success) {
+      setShow("block");
+    } else {
+      setShow("none");
+    }
+  }, [controle]);
+
+  const resetStateForm = () => {
+    console.log("VOU RESETAR");
+    setDataForm(initialStateForm);
+    setControle(initialStateStatus);
+    setValidated(initialStateValidated);
   };
 
   return (
     <>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="..." />
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Hello, world! This is a toast message.</div>
+        </div>
+      </div>
+
       <Container className="bg-secondary pt-2 pt-lg-4">
+        <div className="text-white invalid-feedback" style={{ display: show }}>
+          OPA, BÃO? {status.data.email}
+        </div>
+        <Form.Control.Feedback type="valid" style={{ display: show }}>
+          {status.message}
+        </Form.Control.Feedback>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="my-2 my-lg-3 pb-4 text-white text-center">
             <h2>Cadastro</h2>
           </Row>
           <Row className="input-form">
-            <Form.Group as={Col} lg={12} controlId="validationCustom01">
+            <Form.Group as={Col} lg={12} controlId="validationName">
               <Form.Control
                 name="name"
                 required
@@ -84,13 +129,13 @@ const FormRegister = ({ uf }) => {
                 onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
-                Erro no nome
+                {status.data.name || "O campo nome é requerido."}
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
 
           <Row className="input-form">
-            <Form.Group as={Col} md="12" controlId="validationCustom01">
+            <Form.Group as={Col} md="12" controlId="validationEmail">
               <Form.Control
                 name="email"
                 required
@@ -100,13 +145,13 @@ const FormRegister = ({ uf }) => {
                 onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
-                {status.message || "Erro no email"}
+                {status.data.email || "O campo email é requerido"}
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
 
           <Row className="input-form">
-            <Form.Group as={Col} md="12" controlId="validationCustom01">
+            <Form.Group as={Col} md="12" controlId="validationPhone">
               <Form.Control
                 name="phone"
                 type="tel"
@@ -115,13 +160,13 @@ const FormRegister = ({ uf }) => {
                 onChange={valueInput}
               />
               <Form.Control.Feedback type="invalid">
-                Erro telefone
+                {status.data.phone | "Erro telefone"}
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
 
           <Row className="input-form">
-            <Form.Group as={Col} lg="8" controlId="validationCustom03">
+            <Form.Group as={Col} lg="8" controlId="validationCity">
               <Form.Control
                 name="city"
                 type="text"
@@ -129,12 +174,9 @@ const FormRegister = ({ uf }) => {
                 size="lg"
                 onChange={valueInput}
               />
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid city.
-              </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group as={Col} lg={4} controlId="validationCustom04">
+            <Form.Group as={Col} lg={4} controlId="validationState">
               <Form.Select
                 aria-label="Default select example"
                 name="state"
@@ -151,7 +193,7 @@ const FormRegister = ({ uf }) => {
                 ))}
               </Form.Select>
               <Form.Control.Feedback type="invalid">
-                Please provide a valid state.
+                Selecione um estado válido.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
@@ -166,7 +208,7 @@ const FormRegister = ({ uf }) => {
                 type="button"
                 size="xl"
                 className="my-5"
-                onClick={clearForm}
+                onClick={resetStateForm}
               >
                 Limpar
               </Button>
