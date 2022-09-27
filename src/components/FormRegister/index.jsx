@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { ButtonClear, ButtonSend } from "../ButtonsVariants";
+import axios from "axios";
 
-const FormRegister = () => {
+const FormRegister = ({ uf }) => {
   const [validated, setValidated] = useState(false);
+  const [data, setData] = useState([]);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+
+      axios
+        .post(process.env.REACT_APP_BACKAPI)
+        .then((response) => setData(response.data));
     }
 
     setValidated(true);
   };
+
   return (
     <>
       <Container className="bg-secondary pt-2 pt-lg-4">
@@ -93,9 +100,9 @@ const FormRegister = () => {
                 size="lg"
               >
                 <option>UF</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {uf.map((option) => (
+                  <option value={option.sigla}>{option.nome}</option>
+                ))}
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 Please provide a valid state.
