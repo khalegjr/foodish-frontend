@@ -2,21 +2,18 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import FormRegister from "../../components/FormRegister";
+import "./styles.scss";
 
 const SessionThree = () => {
   return (
     <>
-      <section class="sessao4">
-        <Container>
+      <Container as="section" className="session-form w-100" fluid>
+        <Container sd={12} lg={4} className="">
           <Row>
-            <Col sm={4}>
-              <Container>
-                <FormRegister />
-              </Container>
-            </Col>
+            <FormRegister />
           </Row>
         </Container>
-      </section>
+      </Container>
     </>
   );
 };
