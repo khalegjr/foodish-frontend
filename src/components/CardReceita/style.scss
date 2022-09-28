@@ -1,0 +1,84 @@
+.card-image {
+    position:relative;
+    top:70px;
+    left: 40px;
+    z-index: 1;
+}
+
+//tamanho xl - laptop grande
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+    .card-image {
+        left: 10%;
+    }
+
+    .card-container {
+        width: 300px;
+    }
+}
+
+// tamanho lg - laptop
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .card-image {
+        left: 8%;
+    }
+
+    .card-container {
+        width: 280px !important;
+    }
+}
+  
+// tamanho md - tablet
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .card-image {
+        left: 8%;
+        width: 160px;
+        height: 160px;
+    }
+
+    .card-container {
+        width: 180px !important;
+        height:280px !important;
+    }
+
+    .card-title {
+        font: normal normal bold 24px/36px Poppins !important;
+        margin-top: 40px;
+    }
+
+    .card-text {
+        font: normal normal normal 12px/20px Poppins !important;
+    }
+
+    .card-button {
+        font: normal normal normal 14px/20px Poppins !important;
+    }
+}
+  
+// tamanho xs - mobile
+@media screen and (max-width: 425px) {
+    .card-image {
+        left: 15%;
+        width: 180px;
+        height: 180px;
+    }
+ 
+    .card-container {
+        width: 240px !important;
+        height:280px !important;
+        position: relative;
+        left: 5%;
+    }
+
+    .card-title {
+        font: normal normal bold 24px/36px Poppins !important;
+        margin-top: 40px;
+    }
+
+    .card-text {
+        font: normal normal normal 12px/20px Poppins !important;
+    }
+
+    .card-button {
+        font: normal normal normal 14px/20px Poppins !important;
+    }
+}
