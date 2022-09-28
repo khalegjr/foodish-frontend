@@ -68,7 +68,7 @@ option{
 // tamanho md - tablet
 @media screen and (min-width: 426px) and (max-width: 768px) {
     .form-container{
-        width:540px ;
+        width:400px ;
         height: 720px;
         box-sizing: border-box;
         margin: 0 0 0 10% !important;
@@ -82,7 +82,7 @@ option{
     }
     
     .input-form {
-        width: 420px;
+        width: 340px;
         height: 57px;
         font-family: Poppins;
         font-weight: 300;
@@ -92,8 +92,8 @@ option{
     
     .input-form-city {
         height: 57px;
-        width: 256px;
-        margin: 24px 30px 0 25px ;
+        width: 236px;
+        margin: 24px 15px 0 30px ;
         font-family: Poppins;
         font-weight: 300;
         font-size: 18px;
@@ -101,8 +101,8 @@ option{
     
     .input-form-uf {
         height: 57px;
-        width: 118px;
-        margin: 24px 30px 0 18px ;
+        width: 80px;
+        margin: 24px 15px 0 0 ;
         font-family: Poppins;
         font-weight: 300;
         font-size: 18px;
@@ -118,12 +118,12 @@ option{
     .buttons-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        margin: 48px 60px 62px;
+        justify-content: space-around;
+        margin: 48px 20px 62px;
     }
     
     .form-buttons{
-        width: 160px !important ;
+        width: 140px !important ;
         height: 52px !important;
         
     }
