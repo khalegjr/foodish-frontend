@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+<p align="center"><img src="./src/assets/img/Logo.svg" width="400" alt="Logo Foodish"></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre o projeto
 
-## Available Scripts
+Frontend do projeto teste da [JOTACOM](https://www.jotacom.com/). Construído com React 18 e React-Bootstrap.
 
-In the project directory, you can run:
+## Instalação
 
-### `npm start`
+Para rodar o frontend clone o repositório em um diretório de sua preferência.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone https://github.com/khalegjr/foodish-frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+cd foodish-frontend
+```
 
-### `npm test`
+Renomeie ou copie o arquivo <code>.env.example</code> para <code>.env</code>. Altere as varáveis de ambiente no arquivo .env conforme a necessidade.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A seguinte variável deve ser setada conforme o backend:
+<strong>REACT_APP_BACKAPI</strong>: endereço do serviço de backend.
 
-### `npm run build`
+### Executando com Docker
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Se pretende utilizar em ambiente docker, após atualizar as variáveis de ambiente, execute o seguinte comando para executar em mode daemon:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+docker compose up -d
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Preparando o ambiente
 
-### `npm run eject`
+Instale as dependências
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+./vendor/bin/sail composer install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Suba o servidor:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+## Considerações
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O frontend levou muito mais tempo para fazer, porque ainda sou iniciante no React e, principalmente, não utilizava Bootstrap e seus componentes desde 2014.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Assim, ficaram algumas inconsistências de layout e ainda faltou componentizar no nível que gostaria.
