@@ -7,12 +7,8 @@ import "./styles.scss";
 const FormSection = ({ uf }) => {
   return (
     <>
-      <Container as="section" className="session-form w-100" fluid>
-        <Container sd={12} lg={4} className="">
-          <Row>
-            <FormRegister uf={uf} />
-          </Row>
-        </Container>
+      <Container as="section" className="form-session-container" fluid>
+        <FormRegister uf={uf} />
       </Container>
     </>
   );

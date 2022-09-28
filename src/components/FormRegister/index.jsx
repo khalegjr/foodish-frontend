@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { ButtonClear, ButtonSend } from "../ButtonsVariants";
 import axios from "axios";
+import "./style.scss";
 
 const FormRegister = ({ uf }) => {
   const initialStateForm = {
@@ -84,105 +85,71 @@ const FormRegister = ({ uf }) => {
 
   return (
     <>
-      <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div
-          id="liveToast"
-          class="toast"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-header">
-            <img src="..." class="rounded me-2" alt="..." />
-            <strong class="me-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="toast-body">Hello, world! This is a toast message.</div>
-        </div>
-      </div>
-
-      <Container className="bg-secondary pt-2 pt-lg-4">
-        <div className="text-white invalid-feedback" style={{ display: show }}>
-          OPA, BÃO? {status.data.email}
-        </div>
+      <Container className="bg-secondary form-container">
         <Form.Control.Feedback type="valid" style={{ display: show }}>
           {status.message}
         </Form.Control.Feedback>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Row className="my-2 my-lg-3 pb-4 text-white text-center">
-            <h2>Cadastro</h2>
-          </Row>
-          <Row className="input-form">
-            <Form.Group as={Col} lg={12} controlId="validationName">
-              <Form.Control
-                name="name"
-                required
-                type="text"
-                placeholder="Nome"
-                size="lg"
-                onChange={valueInput}
-              />
-              <Form.Control.Feedback type="invalid">
-                {status.data.name || "O campo nome é requerido."}
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
+          <h2>Cadastro</h2>
+          <Form.Group controlId="validationName">
+            <Form.Control
+              name="name"
+              required
+              type="text"
+              placeholder="Nome"
+              onChange={valueInput}
+              className="input-form"
+            />
+            <Form.Control.Feedback type="invalid">
+              {status.data.name || "O campo nome é requerido."}
+            </Form.Control.Feedback>
+          </Form.Group>
 
-          <Row className="input-form">
-            <Form.Group as={Col} md="12" controlId="validationEmail">
-              <Form.Control
-                name="email"
-                required
-                type="email"
-                placeholder="Email"
-                size="lg"
-                onChange={valueInput}
-              />
-              <Form.Control.Feedback type="invalid">
-                {status.data.email || "O campo email é requerido"}
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
+          <Form.Group controlId="validationEmail">
+            <Form.Control
+              name="email"
+              required
+              type="email"
+              placeholder="Email"
+              onChange={valueInput}
+              className="input-form"
+            />
+            <Form.Control.Feedback type="invalid">
+              {status.data.email || "O campo email é requerido"}
+            </Form.Control.Feedback>
+          </Form.Group>
 
-          <Row className="input-form">
-            <Form.Group as={Col} md="12" controlId="validationPhone">
-              <Form.Control
-                name="phone"
-                type="tel"
-                placeholder="Telefone"
-                size="lg"
-                onChange={valueInput}
-              />
-              <Form.Control.Feedback type="invalid">
-                {status.data.phone | "Erro telefone"}
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
+          <Form.Group controlId="validationPhone" >
+            <Form.Control
+              name="phone"
+              type="tel"
+              placeholder="Telefone"
+              onChange={valueInput}
+              className="input-form"
+            />
+            <Form.Control.Feedback type="invalid">
+              {status.data.phone | "Erro telefone"}
+            </Form.Control.Feedback>
+          </Form.Group>
 
-          <Row className="input-form">
-            <Form.Group as={Col} lg="8" controlId="validationCity">
+          <div className="input-group">
+            <Form.Group controlId="validationCity" >
               <Form.Control
                 name="city"
                 type="text"
                 placeholder="Cidade"
-                size="lg"
                 onChange={valueInput}
+                className="input-form-city"
               />
             </Form.Group>
 
-            <Form.Group as={Col} lg={4} controlId="validationState">
+            <Form.Group controlId="validationState" >
               <Form.Select
                 aria-label="Default select example"
                 name="state"
                 type="text"
                 placeholder="Estado"
-                size="lg"
+                className="input-form-uf"
                 onChange={valueInput}
               >
                 <option>UF</option>
@@ -196,28 +163,20 @@ const FormRegister = ({ uf }) => {
                 Selecione um estado válido.
               </Form.Control.Feedback>
             </Form.Group>
-          </Row>
+          </div>
 
-          {/*
-           * TODO: Alinhamento dos botões do form
-           * TODO: Form à esquerda depois a partir do lg
-           */}
-          <Row className="mb-4 gap-4 flex-grow-0 justify-content-between">
-            <Col className="align-align-items-center">
-              <Button
-                type="button"
-                size="xl"
-                className="my-5"
-                onClick={resetStateForm}
-              >
-                Limpar
-              </Button>
-
-              <Button lg={6} variant="primary" type="submit">
-                Enviar
-              </Button>
-            </Col>
-          </Row>
+          <div className="buttons-container">
+            <Button
+              type="button"
+              className="form-buttons clear"
+              onClick={resetStateForm}
+            >
+              Limpar
+            </Button>
+            <Button variant="primary" className="form-buttons" type="submit">
+              Enviar
+            </Button>
+          </div>
         </Form>
       </Container>
     </>
