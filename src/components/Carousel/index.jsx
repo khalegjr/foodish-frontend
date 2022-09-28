@@ -14,11 +14,11 @@ const CarouselComponent = () => {
       items: 5,
     },
     largeDesktop: {
-      breakpoint: { max: 2999 , min: 1440 },
+      breakpoint: { max: 2999 , min: 1200 },
       items: 3,
     },
     desktop: {
-      breakpoint: { max: 1439, min: 769 },
+      breakpoint: { max: 1199, min: 769 },
       items: 2,
     },
     tablet: {
