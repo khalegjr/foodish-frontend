@@ -1,0 +1,63 @@
+.carousel-container {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 45px;
+}
+
+.react-multiple-carousel__arrow--left {
+    position: absolute !important;
+    bottom: 20% !important;
+    left: 1% !important;
+} 
+
+.react-multiple-carousel__arrow--right {
+    position: absolute !important;
+    bottom: 20% !important;
+    right: 1.5% !important;
+}
+
+//tamanho xl - laptop grande
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+    .carousel-container {
+        width: 800px;
+    }
+
+}
+
+// tamanho lg - laptop
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .carousel-container {
+        width: 640px;
+    }
+}
+  
+// tamanho md - tablet
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .carousel-container {
+        width: 400px;
+    }
+}
+  
+// tamanho xs - mobile
+@media screen and (max-width: 425px) {
+    .carousel-container {
+        width: 300px;
+        margin: 0 20% 0 10px;
+    }
+    
+    .react-multiple-carousel__arrow--left {
+        position: absolute !important;
+        bottom: 20% !important;
+        left: -0.25% !important;
+    } 
+
+    .react-multiple-carousel__arrow--right {
+        position: absolute !important;
+        bottom: 20% !important;
+        right: -0.25% !important;
+    }
+}

@@ -1,74 +1,62 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-import { ButtonGroup, Container } from "react-bootstrap";
+import propTypes from "prop-types";
 import CardReceita from "../CardReceita";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {
-  CustomLeftArrow,
-  CustomRightArrow,
-  CustomButtonGroup,
-} from "../CustomArrow";
+import "./style.scss"
 
-const CarouselSession = () => {
+const CarouselComponent = () => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
+      breakpoint: { min: 3000 },
       items: 5,
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+    largeDesktop: {
+      breakpoint: { max: 2999 , min: 1440 },
       items: 3,
     },
+    desktop: {
+      breakpoint: { max: 1439, min: 769 },
+      items: 2,
+    },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 768, min: 426 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 425, min: 0 },
       items: 1,
     },
   };
 
   return (
     <>
-      <Container>
         <Carousel
           responsive={responsive}
           arrows={true}
-          sliderClass=""
+          className="carousel-container"
           slidesToSlide={1}
           swipeable
-          infinite
         >
-          <Container className="align-items-center">
-            <CardReceita />
-          </Container>
-
-          <Container className="align-items-center">
-            <CardReceita />
-          </Container>
-
-          <Container className="align-items-center">
-            <CardReceita />
-          </Container>
-
-          <Container className="align-items-center">
-            <CardReceita />
-          </Container>
-
-          <Container className="align-items-center">
-            <CardReceita />
-          </Container>
+          <CardReceita />
+          <CardReceita />
+          <CardReceita />
+          <CardReceita/>
+          <CardReceita/>
+          <CardReceita/>
+          <CardReceita />
+          <CardReceita />
+          <CardReceita />
+          <CardReceita/>
+          <CardReceita/>
+          <CardReceita/>
         </Carousel>
-      </Container>
     </>
   );
 };
 
-CarouselSession.propTypes = {};
+CarouselComponent.propTypes = {};
 
-export default CarouselSession;
+export default CarouselComponent;
