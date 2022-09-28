@@ -1,19 +1,16 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
 import logo from "../../assets/img/Logo.svg";
+import "./style.scss";
 
 const Header = () => {
   return (
     <>
-      <header className="my-3" sd={12}>
-        <Navbar expand="lg">
-          <Container>
+        <Navbar >
             <Navbar.Brand>
-              <img src={logo} className="mx-6 img-fluid" alt="logo foodish" />
+              <img src={logo} className="brand" alt="logo foodish" />
             </Navbar.Brand>
-          </Container>
         </Navbar>
-      </header>
     </>
   );
 };
