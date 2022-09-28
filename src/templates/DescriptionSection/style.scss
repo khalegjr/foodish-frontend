@@ -1,0 +1,133 @@
+.description-container {
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+    padding: 80px 200px;
+}
+
+.description-texts {
+    display: flex;
+    flex-direction: column;
+    
+    h2{
+      font-size: 48px ;  
+      margin-bottom: 36px !important;
+      padding: 0 !important;
+    }
+
+    p {
+        font-size: 18px;
+        max-width: 300px;
+    }
+}
+
+.image {
+    max-width: 550px;
+    max-height: 384px;
+    margin-top: 140px;
+}
+
+// tamanho lg - laptop
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .description-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 100px;
+        background-color: black;
+    }
+    
+    .description-texts {
+        display: flex;
+        flex-direction: column;
+        
+        h2{
+          font-size: 36px ;  
+          margin-bottom: 36px !important;
+          padding: 0 !important;
+        }
+    
+        p {
+            font-size: 16px;
+            max-width: 350px;
+        }
+    }
+    
+    .image {
+        max-width: 400px;
+        max-height: 384px;
+        margin-top: 70px;
+    }
+}
+
+// tamanho md - tablet
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .description-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 8%;
+        background-color: black;
+    }
+    
+    .description-texts {
+        display: flex;
+        flex-direction: column;
+        
+        h2{
+          font-size: 28px ;  
+          margin-bottom: 24px !important;
+          padding: 0 !important;
+        }
+    
+        p {
+            font-size: 12px;
+            max-width: 250px;
+        }
+    }
+    
+    .image {
+        max-width: 320px;
+        max-height: 384px;
+        margin-top: 70px;
+    }
+}
+
+
+// tamanho xs - mobile
+@media screen and (max-width: 425px) {
+    .description-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 5%;
+        background-color: black;
+    }
+    
+    .description-texts {
+        display: flex;
+        flex-direction: column;
+        
+        h2{
+          font-size: 28px ; 
+          margin-bottom: 20px !important; 
+          padding: 0 !important;
+        }
+    
+        p {
+            font-size: 12px;
+            max-width: 250px;
+        }
+    }
+    
+    .image {
+        max-width: 300px;
+        max-height: 384px;
+        margin-bottom: 36px;
+    }
+}
