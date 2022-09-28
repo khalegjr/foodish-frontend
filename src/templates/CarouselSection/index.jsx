@@ -1,28 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
-import CardReceita from "../../components/CardReceita";
-import { Col, Container, Row } from "react-bootstrap";
-import CarouselSession from "../../components/Carousel";
+import propTypes from "prop-types";
+import CarouselComponent from "../../components/Carousel";
+import "./style.scss"
 
-const SessionOne = () => {
+const CarouselSection = () => {
   return (
     <>
-      <section class="sessao2">
-        <Container className="text-black">
-          <Row>
-            <Col
-              className="mx-6 py-5 justify-content-center align-items-center"
-              bg="dark"
-            >
-              <CarouselSession />
-            </Col>
-          </Row>
-        </Container>
+      <section className="carousel-session-container">
+          <CarouselComponent />
       </section>
     </>
   );
 };
 
-SessionOne.propTypes = {};
+CarouselSection.propTypes = {};
 
-export default SessionOne;
+export default CarouselSection;
