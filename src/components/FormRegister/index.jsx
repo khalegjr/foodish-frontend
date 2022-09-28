@@ -63,13 +63,11 @@ const FormRegister = ({ uf }) => {
     setValidated(true);
   };
 
-  console.log("Meus status fora da handle: ", status.data.email);
-  console.log("controle antes: ", controle.message);
   const [show, setShow] = useState("none");
 
   useEffect(() => {
     setStatus(controle);
-    if (!controle.success) {
+    if (controle.success) {
       setShow("block");
     } else {
       setShow("none");
@@ -77,9 +75,9 @@ const FormRegister = ({ uf }) => {
   }, [controle]);
 
   const resetStateForm = () => {
-    console.log("VOU RESETAR");
     setDataForm(initialStateForm);
     setControle(initialStateStatus);
+    setStatus(initialStateStatus);
     setValidated(initialStateValidated);
   };
 
@@ -119,7 +117,7 @@ const FormRegister = ({ uf }) => {
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group controlId="validationPhone" >
+          <Form.Group controlId="validationPhone">
             <Form.Control
               name="phone"
               type="tel"
@@ -133,7 +131,7 @@ const FormRegister = ({ uf }) => {
           </Form.Group>
 
           <div className="input-group">
-            <Form.Group controlId="validationCity" >
+            <Form.Group controlId="validationCity">
               <Form.Control
                 name="city"
                 type="text"
@@ -143,7 +141,7 @@ const FormRegister = ({ uf }) => {
               />
             </Form.Group>
 
-            <Form.Group controlId="validationState" >
+            <Form.Group controlId="validationState">
               <Form.Select
                 aria-label="Default select example"
                 name="state"
@@ -169,7 +167,7 @@ const FormRegister = ({ uf }) => {
             <Button
               type="button"
               className="form-buttons clear"
-              onClick={resetStateForm}
+              onClick={() => resetStateForm()}
             >
               Limpar
             </Button>
