@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [uf, setUf] = useState([]);
 
