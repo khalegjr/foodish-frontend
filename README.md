@@ -50,3 +50,5 @@ npm start
 O frontend levou muito mais tempo para fazer, porque ainda sou iniciante no React e, principalmente, não utilizava Bootstrap e seus componentes desde 2014.
 
 Assim, ficaram algumas inconsistências de layout e ainda faltou componentizar no nível que gostaria.
+
+Conhecendo um pouco mais do ecossistema do React, se tivesse tempo, usaria a lib <strong>react-hook-form</strong> para gerenciar para gerenciar os estados do formulário.
