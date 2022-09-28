@@ -1,6 +1,73 @@
 .principal-card {
-  background: transparent url('../../assets/img/Background.png') 0% 0% no-repeat padding-box;
+  background-image:url("../../assets/img/Background.png");
   width: 100%;
-  height: 100%;
-  padding-top: 3rem;
+  height: 720px;
+  padding: 120px 0 150px 220px;
+  background-size: 100% 720px;
+}
+
+h1 {
+  font-size: 84px;
+  max-width: 650px;
+  padding-bottom: 40px;
+}
+
+h3 {
+  font-size: 32px;
+  max-width: 550px;
+  padding-bottom: 40px;
+}
+
+
+// tamanho lg - laptop
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .principal-card {
+    padding: 120px 180px 150px 180px;
+  }
+
+  h1 {
+    font-size: 72px;
+    padding-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+    padding-bottom: 30px;
+  }
+}
+
+// tamanho md - tablet
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .principal-card {
+    padding: 120px 100px 150px 100px;
+    background-size: auto;
+  }
+
+  h1 {
+    font-size: 64px;
+    padding-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 21px;
+    padding-bottom: 60px;
+  }
+}
+
+// tamanho xs - mobile
+@media screen and (max-width: 425px) {
+  .principal-card {
+    padding: 120px 10% 150px 10%;
+    background-size: auto;
+  }
+
+  h1 {
+    font-size: 48px;
+    padding-bottom: 40px;
+  }
+
+  h3 {
+    font-size: 18px;
+    padding-bottom: 100px;
+  }
 }
